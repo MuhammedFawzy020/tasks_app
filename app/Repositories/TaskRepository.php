@@ -2,20 +2,20 @@
 
 namespace App\Repositories;
 
-use App\Models\Task;
+use App\Models\Tasks;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class TaskRepository
 {
-    public function createTask(array $data): Task
+    public function createTask(array $data): Tasks
     {
-        return Task::create($data);
+        return Tasks::create($data);
     }
 
     public function getTasks(int $perPage = 10): LengthAwarePaginator
     {
-        return Task::with(['assignedTo', 'assignedBy'])
+        return Tasks::with(['assignedTo', 'assignedBy'])
             ->paginate($perPage);
     }
 }
