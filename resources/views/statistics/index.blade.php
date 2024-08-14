@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.dashboardApp')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+    
                 <div class="card">
-                    <div class="card-header">{{ __('User Task Statistics') }}</div>
+                    <div class="card-header" style="background-color:white;">
+                      <h4>{{ __('User Task Statistics') }}</h4>
+                    </div>
 
                     <div class="card-body">
                         <table class="table">
@@ -16,17 +16,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($topUsers as $userStats)
+                                @foreach ($stats as $userStats)
                                     <tr>
-                                        <td>{{ $userStats->user->name }}</td>
+                                        <td>{{ $userStats->assignedTo->name }}</td>
                                         <td>{{ $userStats->task_count }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ $stats->links() }}
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+       
 @endsection

@@ -14,7 +14,7 @@ class AdminSeeder extends Seeder
     {
         User::factory()->create([
             'is_admin' => true ,
-            'name' => 'Admin',
+            'name' => 'Muhammed Fawzy',
             'email' => 'admin@admin.com',
             'password' => Hash::make('password'),
         ]);

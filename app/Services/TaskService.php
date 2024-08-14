@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\User;
+use App\Models\Statistics;
 use App\Repositories\TaskRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -34,5 +35,10 @@ class TaskService
     public function getTasks(int $perPage = 10): LengthAwarePaginator
     {
         return $this->taskRepository->getTasks($perPage);
+    }
+
+    public function getUserTaskCounts(int $perPage = 10): LengthAwarePaginator
+    {
+        return $this->taskRepository->getUserTaskCounts($perPage);
     }
 }

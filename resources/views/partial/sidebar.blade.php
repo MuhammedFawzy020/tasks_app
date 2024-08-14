@@ -30,7 +30,7 @@
             <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{route('assigned-tasks')}}">Assign New Task</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('tasks-index')}}">Assigned Tasks</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Task Statistics</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('statistics-index')}}">Task Statistics</a></li>
             </ul>
             </div>
         </li>

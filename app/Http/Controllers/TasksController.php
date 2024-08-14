@@ -48,4 +48,11 @@ class TasksController extends Controller
         $tasks = $this->taskService->getTasks();
         return view('tasks.tasksList', compact('tasks'));
     }
+
+
+    public function statisticsIndex(Request $request): View
+    {
+        $stats = $this->taskService->getUserTaskCounts();
+        return view('statistics.index', compact('stats'));
+    }
 }
