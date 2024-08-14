@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
+use App\Models\Tasks;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $no_of_users = User::where('is_admin', false)->count();
+        $no_of_admins = User::where('is_admin', true)->count();
+        $no_of_tasks = Tasks::count();
+        return view('home' , compact('no_of_users' ,'no_of_admins','no_of_tasks'));
     }
 }
