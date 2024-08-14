@@ -45,8 +45,8 @@
                 <div data-mdb-input-init class="form-outline mb-3">
                     <input type="password" id="form3Example4" class="form-control form-control-lg"
                     placeholder="Enter password" name="password"/>
-                    <label class="form-label" for="form3Example4">Password</label>
-                    <label class="form-label" for="form3Example3">Test Password : password </label>
+                    <label class="form-label" for="form3Example4">Test Password : password</label>
+                   
 
                 </div>
 
