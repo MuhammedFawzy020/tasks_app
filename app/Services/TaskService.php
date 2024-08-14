@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Repositories\TaskRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
-
+use App\Models\Tasks;
 class TaskService
 {
     private $taskRepository;

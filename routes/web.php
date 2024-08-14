@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/allTasks' , [App\Http\Controllers\TasksController::class, 'index'] )->name('tasks-index');
+Route::get('/assignedTasks' , [App\Http\Controllers\TasksController::class, 'create'] )->name('assigned-tasks');
+Route::post('/createNewTask' , [App\Http\Controllers\TasksController::class, 'store'] )->name('tasks-store');

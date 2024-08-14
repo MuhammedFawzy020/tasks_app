@@ -1,21 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.dashboardApp')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Create Task') }}</div>
 
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('tasks.store') }}">
+
+    <div class="card">
+                  <div class="card-body">
+                    <div class="card-header" style="background-color:white !important">
+                    <h4 class="card-title">Assign a New Task</h4>
+                    </div>
+                    <form method="POST" action="{{ route('tasks-store') }}" style="padding-top:50px;">
                             @csrf
 
                             <div class="form-group row">
                                 <label for="admin_name" class="col-md-4 col-form-label text-md-right">{{ __('Admin Name') }}</label>
 
                                 <div class="col-md-6">
-                                    <select id="admin_name" class="form-control @error('assigned_by_id') is-invalid @enderror" name="assigned_by_id" required>
+                                    <select id="admin_name" class="form-control @error('assigned_by_id') is-invalid @enderror select2" name="assigned_by_id" required>
                                         <option value="">Select Admin</option>
                                         @foreach (Auth::user()->whereIsAdmin(true)->get() as $admin)
                                             <option value="{{ $admin->id }}">{{ $admin->name }}</option>
@@ -85,9 +85,8 @@
                                 </div>
                             </div>
                         </form>
-                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </div>
+<!-- Scripts -->
+
 @endsection
