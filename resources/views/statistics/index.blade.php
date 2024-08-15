@@ -24,7 +24,10 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $stats->links() }}
+                        <div class="d-flex justify-content-center" style="justify-content: right !important;margin-top:20px;">
+                           {{ $stats->links() }}
+                        </div>
+                        
                     </div>
                 </div>
        

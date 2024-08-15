@@ -16,11 +16,12 @@ class AdminSeeder extends Seeder
             'is_admin' => true ,
             'name' => 'Muhammed Fawzy',
             'email' => 'admin@admin.com',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('123456'),
         ]);
+        
         User::factory()->count(100)->create([
             'is_admin' => true ,
-            'password' => Hash::make('password'),
+            'password' => Hash::make('123456'),
         ]);
     }
 }

@@ -26,7 +26,9 @@
                     @endforeach
                 </tbody>
             </table>
-            {{ $tasks->links() }}
+            <div class="d-flex justify-content-center" style="justify-content: right !important;margin-top:20px;">
+                {{ $tasks->links() }}
+            </div>
            
             </div>
         </div>
