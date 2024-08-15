@@ -27,7 +27,7 @@ class SetupApp extends Command
      */
     public function handle()
     {
-        $this->call('composer', ['install']);
+        //$this->call('composer', ['install']);
         $this->call('migrate');
         $this->call('db:seed');
         $this->call('serve');
