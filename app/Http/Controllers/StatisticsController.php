@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\StatisticsService;
+use App\Services\StatisticService;
 use Illuminate\View\View;
 
 class StatisticsController extends Controller
 {
     private $statisticsService;
 
-    public function __construct(StatisticsService $statisticsService)
+    public function __construct(StatisticService $statisticsService)
     {
         $this->statisticsService = $statisticsService;
     }
@@ -19,4 +19,6 @@ class StatisticsController extends Controller
         $topUsers = $this->statisticsService->getTopUsersByTaskCount();
         return view('statistics.index', compact('topUsers'));
     }
+
+     
 }

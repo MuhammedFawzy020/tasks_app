@@ -16,18 +16,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($stats as $userStats)
+                                @foreach ($topUsers as $userStats)
                                     <tr>
-                                        <td>{{ $userStats->assignedTo->name }}</td>
+                                        <td>{{ $userStats->user->name }}</td>
                                         <td>{{ $userStats->task_count }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
-                        </table>
-                        <div class="d-flex justify-content-center" style="justify-content: right !important;margin-top:20px;">
-                           {{ $stats->links() }}
-                        </div>
-                        
+                        </table>   
                     </div>
                 </div>
        
