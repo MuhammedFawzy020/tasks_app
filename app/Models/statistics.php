@@ -12,7 +12,7 @@ class Statistics extends Model
 
     protected $fillable = [
         'user_id',
-        'task_id',
+        'task_count',
     ];
 
     public function user(): BelongsTo

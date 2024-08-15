@@ -17,7 +17,7 @@
                                 <div class="col-md-6">
                                     <select id="admin_name" class="form-control @error('assigned_by_id') is-invalid @enderror select2" name="assigned_by_id" required>
                                         <option value="">Select Admin</option>
-                                        @foreach (Auth::user()->whereIsAdmin(true)->get() as $admin)
+                                        @foreach ($adminUsers as $admin)
                                             <option value="{{ $admin->id }}">{{ $admin->name }}</option>
                                         @endforeach
                                     </select>

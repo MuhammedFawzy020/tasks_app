@@ -25,4 +25,6 @@ Route::get('/allTasks' , [App\Http\Controllers\TasksController::class, 'index'] 
 Route::get('/assignedTasks' , [App\Http\Controllers\TasksController::class, 'create'] )->name('assigned-tasks');
 Route::post('/createNewTask' , [App\Http\Controllers\TasksController::class, 'store'] )->name('tasks-store');
 
-Route::get('/statistics' , [App\Http\Controllers\TasksController::class, 'statisticsIndex'] )->name('statistics-index');
+Route::get('/statistics' , [App\Http\Controllers\StatisticsController::class, 'index'] )->name('statistics-index');
+
+Route::get('/users', [App\Http\Controllers\HomeController::class, 'search'])->name('search');

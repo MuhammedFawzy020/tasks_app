@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Services\TaskService;
+use App\Services\StatisticsService;
 use Illuminate\Http\RedirectResponse;
 
 use Illuminate\View\View;
@@ -22,7 +23,8 @@ class TasksController extends Controller
     public function create(): View
     {
         $nonAdminUsers = User::where('is_admin', false)->get();
-        return view('tasks.tasksCreate', compact('nonAdminUsers'));
+        $adminUsers = User::where('is_admin', true)->get();
+        return view('tasks.tasksCreate', compact('nonAdminUsers' ,'adminUsers'));
     }
 
     public function store(Request $request): RedirectResponse
