@@ -28,39 +28,26 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/home';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    
     public function login(Request $request)
-    {
-        // Validate the login request
+    {  
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-
-        // Attempt to log the user in
-        if (Auth::attempt($credentials)) {
-            // Check if the user is an admin
+       
+        if (Auth::attempt($credentials)) { 
             $user = Auth::user();
             if ($user->is_admin == 1) {
                 $request->session()->regenerate();
                 return $this->sendLoginResponse($request);
-            } else {
-                // Log the user out and return an error message
+            } 
+            else {
                 Auth::logout();
-                return back()->withErrors([
-                    'email' => 'You are not authorized to login.',
-                ])->onlyInput('email');
+                return back()->withErrors(['email' => 'You are not authorized to login.'])->onlyInput('email');
             }
         }
-
-        // If the login fails, return back to the login page with an error message
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        return back()->withErrors(['email' => 'The provided credentials do not match our records.'])->onlyInput('email');
     }
 
     

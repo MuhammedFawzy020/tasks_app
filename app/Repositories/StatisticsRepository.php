@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Collection;
 
 class StatisticsRepository
 {
+    public function createStatistics(array $data): Tasks
+    {
+        return Statistics::create($data);
+    }
+
     public function getTopUsersByTaskCount(int $limit = 10): Collection
     {
         return Statistics::with('user')

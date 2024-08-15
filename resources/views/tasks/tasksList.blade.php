@@ -12,7 +12,7 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Assigned To</th>
-                    <th>Assigned By</th>
+                    <th>Admin</th>
                 </tr>
                 </thead>
                 <tbody>
